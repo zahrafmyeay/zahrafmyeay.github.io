@@ -6,50 +6,51 @@
   <link rel="icon" type="image/png" href="icon_asset/zahra_fithriyah_muna_favicon.png"> 
   <title>Zahra FM - Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     html, body {
       height: 100%;
-      width:100%;
+      width: 100%;
       margin: 0;
     }
 
     body {
       background-image: url('icon_asset/background_zahra.png');
-      /* background-size: co200%ver; */
       background-position: center;
       background-repeat: no-repeat;
       font-family: sans-serif;
       color: #2d3748;
-      /* display: flex;
-      flex-direction: column; */
       min-height: 100vh;
     }
 
     section {
       flex-grow: 1;
-      padding-top: 5rem; /* higher logo */
+      padding-top: 5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      width:100%;
-
+      width: 100%;
     }
-    #logo {    margin: auto;
-    max-width: 100%;}
+
+    #logo {
+      margin: auto;
+      max-width: 100%;
+    }
+
     .logo {
       max-width: 100%;
-    width: 40%;
-    height: auto;
-    margin: auto;
-    margin-bottom: 4rem;
-    position: relative;
-    z-index: 2;
+      width: 40%;
+      height: auto;
+      margin: auto;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 2;
     }
 
     .curve-container {
       position: relative;
-      width: 900px;  /* balanced width */
+      width: 900px;
       height: 360px;
       margin: 0 auto;
     }
@@ -61,7 +62,7 @@
       bottom: 90px;
       left: 50%;
       margin-left: -100px;
-      transform-origin: 50% -500px;  /* adjusted pivot */
+      transform-origin: 50% -500px;
       transition: transform 0.3s ease;
     }
 
@@ -81,15 +82,14 @@
       transform: scale(1.1) rotate(var(--rotate));
     }
 
-    /* Smile arc rotation for curve on my websiteeeeeeee */
-    .curve-container a:nth-child(1) { transform: rotate(-36deg); } /* Wayfinding */
-    .curve-container a:nth-child(2) { transform: rotate(-60deg); } /* Animations */
-    .curve-container a:nth-child(3) { transform: rotate(-12deg); } /* Illustrations */
-    .curve-container a:nth-child(4) { transform: rotate(12deg); }  /* Branding */
-    .curve-container a:nth-child(5) { transform: rotate(36deg); }  /* Books */
-    .curve-container a:nth-child(6) { transform: rotate(60deg); }  /* About Me */
+    /* 🌈 Curved layout for laptop/desktop */
+    .curve-container a:nth-child(1) { transform: rotate(-36deg); }
+    .curve-container a:nth-child(2) { transform: rotate(-60deg); }
+    .curve-container a:nth-child(3) { transform: rotate(-12deg); }
+    .curve-container a:nth-child(4) { transform: rotate(12deg); }
+    .curve-container a:nth-child(5) { transform: rotate(36deg); }
+    .curve-container a:nth-child(6) { transform: rotate(60deg); }
 
-    /* to make the icon right position maybe*/
     .curve-container a:nth-child(1) img { --rotate: 36deg; }
     .curve-container a:nth-child(2) img { --rotate: 60deg; }
     .curve-container a:nth-child(3) img { --rotate: 12deg; }
@@ -104,13 +104,98 @@
       background: transparent;
       margin-top: auto;
     }
+
+    /* 🍎 Tablet view (641px–1024px): 2x3 grid */
+    @media (max-width: 1024px) {
+      .logo {
+        width: 60%;
+        margin-bottom: 3rem;
+      }
+
+      .curve-container {
+        width: 90%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        position: static;
+        transform: none;
+      }
+
+      .curve-container a {
+        position: static;
+        transform: none !important;
+        width: 150px;
+        height: auto;
+      }
+
+      .curve-container a img {
+        transform: none !important;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* 📱 Mobile view (<640px): 2 icons per row — centered properly */
+    @media (max-width: 640px) {
+      .logo {
+        width: 70%;
+        margin-bottom: 2rem;
+      }
+
+      .curve-container {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 1.5rem;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        margin: 0 auto;
+        position: static;
+      }
+
+      .curve-container a {
+        position: static;
+        transform: none !important;
+        margin: 0 auto;
+        width: 120px;
+        height: auto;
+      }
+
+      .curve-container a img {
+        transform: none !important;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    /* 🧁 Very small phones (<400px) */
+    @media (max-width: 400px) {
+      .curve-container {
+        max-width: 300px;
+        gap: 1rem;
+      }
+
+      .curve-container a {
+        width: 100px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <section>
     <div id="logo">
-    <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo" />
+      <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo" />
     </div>
+
     <div class="curve-container">
       <a href="wayfinding.html" title="Wayfinding" target="_blank" rel="noopener">
         <img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding Icon" />
@@ -134,7 +219,6 @@
   </section>
 
   <footer>© 2025 Zahra FM</footer>
-
   <script src="navbar.js"></script>
 </body>
 </html>
