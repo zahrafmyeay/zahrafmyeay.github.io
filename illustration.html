@@ -97,36 +97,75 @@
     padding-bottom: 30px;
   "
 >
-  <div class="max-w-8xl mx-20 px-8 flex justify-between items-center">
-    <div class="flex space-x-8 ml-[-20px]">
-      <a href="animation.html" aria-label="Animation">
-        <img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" />
-      </a>
-      <a href="illustration.html" aria-label="Illustration">
-        <img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" />
-      </a>
-      <a href="wayfinding.html" aria-label="Wayfinding">
-        <img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" />
-      </a>
+  <div class="max-w-8xl mx-20 px-8 flex items-center justify-start md:justify-between">
+    <!-- Left icons (desktop only) -->
+    <div class="hidden md:flex space-x-8">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <a href="index.html" class="flex-shrink-0">
+    <!-- Logo -->
+    <a href="index.html" class="flex-shrink-0 md:mx-auto">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <div class="flex space-x-8 mr-[-20px]">
-      <a href="books.html" aria-label="Books">
-        <img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" />
-      </a>
-      <a href="branding.html" aria-label="Branding">
-        <img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" />
-      </a>
-      <a href="aboutme.html" aria-label="About Me">
-        <img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" />
-      </a>
+    <!-- Right icons (desktop only) -->
+    <div class="hidden md:flex space-x-8">
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
+
+    <!-- Hamburger Button (mobile only) -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none z-50 ml-auto">
+      <span class="block w-6 h-0.5 bg-black"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Fullscreen Overlay Menu -->
+<div id="mobile-menu" class="fixed inset-0 hidden z-50"
+     style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center;">
+  
+  <!-- Close button top-right -->
+  <div class="absolute top-5 right-5 z-50">
+    <button id="close-btn" class="relative w-8 h-8">
+      <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
+      <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
+    </button>
+  </div>
+
+  <!-- Centered 2-column grid icons -->
+  <div class="h-full w-full flex justify-center items-center">
+    <div class="grid grid-cols-2 gap-8">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Open mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+  });
+
+  // Close mobile menu
+  closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
 
 <!-- Illustration Section -->
 <section class="pt-72 pb-16 bg-white text-center"> 

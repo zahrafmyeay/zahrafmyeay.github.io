@@ -10,6 +10,9 @@
   <style>
     nav {
       font-family: 'matejournal';
+      background-image: url('icon_asset/beginning_section_zahra.png');
+      background-size: cover;
+      background-position: center;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -39,12 +42,12 @@
       min-height: 100vh;
     }
 
-    section {
-      flex-grow: 1;
+    main {
+      flex: 1; /* Make main content take available space */
     }
 
     footer {
-      position: relative;
+      position: relative; /* Let it flow naturally */
       color: white;
       height: auto;
     }
@@ -56,7 +59,7 @@
     }
 
     footer > div {
-      position: absolute;
+      position: absolute; /* Center text over footer image */
       inset: 0;
       display: flex;
       align-items: center;
@@ -65,6 +68,21 @@
       user-select: none;
       font-size: 1.25rem;
       font-weight: 600;
+    }
+
+    /* Fade-in animation for text */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -81,53 +99,105 @@
     padding-bottom: 30px;
   "
 >
-  <div class="max-w-8xl mx-20 px-8 flex justify-between items-center">
-    <div class="flex space-x-8 ml-[-20px]">
-      <a href="animation.html" aria-label="Animation">
-        <img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" />
-      </a>
-      <a href="illustration.html" aria-label="Illustration">
-        <img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" />
-      </a>
-      <a href="wayfinding.html" aria-label="Wayfinding">
-        <img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" />
-      </a>
+  <div class="max-w-8xl mx-20 px-8 flex items-center justify-start md:justify-between">
+    <!-- Left icons (desktop only) -->
+    <div class="hidden md:flex space-x-8">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <a href="index.html" class="flex-shrink-0">
+    <!-- Logo -->
+    <a href="index.html" class="flex-shrink-0 md:mx-auto">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <div class="flex space-x-8 mr-[-20px]">
-      <a href="books.html" aria-label="Books">
-        <img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" />
-      </a>
-      <a href="branding.html" aria-label="Branding">
-        <img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" />
-      </a>
-      <a href="aboutme.html" aria-label="About Me">
-        <img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" />
-      </a>
+    <!-- Right icons (desktop only) -->
+    <div class="hidden md:flex space-x-8">
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
+
+    <!-- Hamburger Button (mobile only) -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none z-50 ml-auto">
+      <span class="block w-6 h-0.5 bg-black"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+    </button>
   </div>
 </nav>
 
-<!-- Wayfinding Section -->
-<section class="pt-72 pb-16 bg-white text-center">
-  <h1 class="text-5xl mb-6">Wayfinding</h1>
-  <p class="text-lg mb-8">My wayfinding Works.</p>
+<!-- Mobile Fullscreen Overlay Menu -->
+<div id="mobile-menu" class="fixed inset-0 hidden z-50"
+     style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center;">
   
-</section>
+  <!-- Close button top-right -->
+  <div class="absolute top-5 right-5 z-50">
+    <button id="close-btn" class="relative w-8 h-8">
+      <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
+      <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
+    </button>
+  </div>
 
-<!-- Modal -->
-<div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 relative">
-    <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
-    <img id="illustration-img" src="" alt="Illustration" class="w-full rounded-lg mb-4" />
-    <h2 id="illustration-title" class="text-xl font-bold mb-2"></h2>
-    <p id="illustration-desc" class="text-black-600"></p>
+  <!-- Centered 2-column grid icons -->
+  <div class="h-full w-full flex justify-center items-center">
+    <div class="grid grid-cols-2 gap-8">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
+    </div>
   </div>
 </div>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Open mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+  });
+
+  // Close mobile menu
+  closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
+
+<!-- Main content wrapper: pushes content below navbar -->
+<main class="mt-[200px]">
+
+  <!-- Wayfinding Section -->
+  <section class="relative w-full flex flex-col justify-center items-center">
+    <!-- Full-width image -->
+    <img 
+      src="illustrations_asset/Zahra_Fithriyah_children_book.jpg" 
+      alt="Wayfinding Illustration" 
+      class="w-full h-auto object-cover">
+
+    <!-- Text under the image with fade-in -->
+    <div class="mt-8 text-center max-w-3xl px-6 fade-in">
+      <h1 class="text-5xl mb-4">Wayfinding</h1>
+      <p class="text-lg mb-8">Ancient Lives Exhibition</p>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 relative">
+      <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
+      <img id="illustration-img" src="" alt="Illustration" class="w-full rounded-lg mb-4" />
+      <h2 id="illustration-title" class="text-xl font-bold mb-2"></h2>
+      <p id="illustration-desc" class="text-black-600"></p>
+    </div>
+  </div>
+
+</main>
 
 <!-- Footer -->
 <footer>
