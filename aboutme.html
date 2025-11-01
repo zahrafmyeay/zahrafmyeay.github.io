@@ -66,6 +66,37 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
+
+    /* --- SOCIAL ICONS --- */
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: grayscale(100%) brightness(0.8);
+    }
+
+    .social-icon:hover {
+      transform: scale(1.15);
+      filter: grayscale(0%) brightness(1);
+    }
+
+    /* Slight LinkedIn size correction */
+    .social-linkedin img {
+      transform: scale(0.9); /* make LinkedIn visually match others */
+    }
+
+    /* Colored hover glow */
+    .social-linkedin:hover img {
+      filter: drop-shadow(0 0 8px #0077b5);
+      transform: scale(1.05);
+    }
+    .social-youtube:hover img {
+      filter: drop-shadow(0 0 8px #ff0000);
+    }
+    .social-email:hover img {
+      filter: drop-shadow(0 0 8px #f4b400);
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -114,8 +145,8 @@
 
 <!-- About Me Section -->
 <section class="pt-72 pb-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-row md:items-center md:justify-between">
-    
+  <div class="max-w-7xl mx-auto px-4 md:px-30 flex flex-col md:flex-row md:items-center md:justify-between">
+  
     <!-- Photo Area -->
     <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
       <img src="icon_asset/zahra_fithriyah_photo_profile.png" alt="Zahra FM Photo" class="w-85 h-auto" />
@@ -125,10 +156,39 @@
     <div class="md:w-1/2 md:pl-12">
       <h1 class="text-4xl font-bold mb-4">Hello! I'm Zahra</h1>
       <p class="text-lg leading-relaxed">
-        Zahra Fithriyah Muna is passionate and deeply interested in animation, illustration, and design. She has received multiple prestigious national animation awards and contributed to a wide range of design projects. Zahra is currently completing a Master of Design and Production (Graphic Design) at the Victorian College of the Arts (VCA). Prior to this, she graduated as an outstanding and fastest graduate from Institut Teknologi Sepuluh Nopember (ITS), with a Bachelor of Design. Her passion for narrative drawing and storytelling allows her to explore various styles and techniques. She aims to create beneficial, inspiring, and knowledgeable artworks that positively impact others.
+        zahra is passionate and deeply interested in animation, illustration, and design. She has received multiple prestigious national animation awards and contributed to a wide range of design projects. Zahra is currently completing a Master of Design and Production (Graphic Design) at the Victorian College of the Arts (VCA). </strong><br> <br>
+        Prior to this, she graduated as an outstanding and fastest graduate from Institut Teknologi Sepuluh Nopember (ITS), with a Bachelor of Design. Her passion for narrative drawing and storytelling allows her to explore various styles and techniques.</strong><br> <br>
+        She aims to create beneficial, inspiring, and knowledgeable artworks that positively impact others.
       </p>
-    </div>
 
+      <!-- Social Media Icons -->
+      <div class="flex space-x-6 mt-6 items-center">
+        <a href="https://linkedin.com/in/zahraafm" target="_blank" aria-label="LinkedIn" class="social-linkedin">
+          <img src="icon_asset/icon_linkedin.png" alt="LinkedIn" class="social-icon" />
+        </a>
+        <a href="https://www.youtube.com/@zahirahandzahra" target="_blank" aria-label="YouTube" class="social-youtube">
+          <img src="icon_asset/icon_youtube.png" alt="YouTube" class="social-icon" />
+        </a>
+        <a href="mailto:zahrafithriyahmuna@gmail.com" aria-label="Email" class="social-email">
+          <img src="icon_asset/icon_email.png" alt="Email" class="social-icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Awards Section -->
+  <div class="max-w-7xl mx-auto mt-16 px-4 md:px-30">
+    <h2 class="text-3xl font-bold mb-6 text-left">Awards</h2>
+    <ul class="list-disc list-inside space-y-4 text-lg leading-relaxed">
+      <li><strong>National Animation Award – Indonesia Animation abcds (2022)</strong><br>
+        Recognized for excellence in 2D character animation and storytelling.</li>
+      <li><strong>Best Student Project – ITS Design Exhibition (2021)</strong><br>
+        Awarded for innovative visual storytelling in an animated short film.</li>
+      <li><strong>Runner-Up – gemastik (2020)</strong><br>
+        Honored for outstanding contribution to the visual arts and creative design community.</li>
+      <li><strong>Academic Achievement Award – ITS Faculty of Design (2019)</strong><br>
+        Recognized as one of the top-performing students for consistent academic excellence.</li>
+    </ul>
   </div>
 </section>
 
