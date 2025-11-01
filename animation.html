@@ -66,6 +66,29 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
+
+    .video-frame {
+      width: 100%;
+      max-width: 900px;       /* Limit size on large screens */
+      margin: 0 auto;         /* Center horizontally */
+      aspect-ratio: 16 / 9;   /* Keep proper ratio */
+      overflow: hidden;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .video-frame {
+        padding-left: 8px;
+        padding-right: 8px;
+        box-sizing: border-box;
+      }
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -122,6 +145,19 @@
     </button>
   </div>
   
+  <!-- Centered 2-column grid icons -->
+  <div class="h-full w-full flex justify-center items-center">
+    <div class="grid grid-cols-2 gap-8">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
+    </div>
+  </div>
+</div>
+
 <script>
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -138,82 +174,66 @@
   });
 </script>
 
-  <!-- Centered 2-column grid icons -->
-  <div class="h-full w-full flex justify-center items-center">
-    <div class="grid grid-cols-2 gap-8">
-      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
-      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
-      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
-      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
-      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
-      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
-    </div>
-  </div>
-</div>
-
-<!-- branding Section -->
+<!-- Animations Section -->
 <section class="pt-72 pb-3 bg-white text-center">
   <h1 class="text-5xl mb-6">Animations</h1>
   <p class="text-lg mb-6">This is my showreel!</p>
-  
 </section>
 
-<div class="video-frame">
+<!-- Main Video -->
+<div class="video-frame mb-12">
   <iframe
+    id="main-video"
     src="https://www.youtube.com/embed/cC_Ac8Urwzw?si=7OV2J0FsH14x9-PR"
     allowfullscreen
-    title="YouTube video">
+    title="Showreel Video">
   </iframe>
 </div>
 
-<style>
-.video-frame {
-  width: 100%;
-  max-width: 900px;       /* Limit size on large screens */
-  margin: 0 auto;         /* Center horizontally */
-  aspect-ratio: 16 / 9;   /* Keep proper ratio */
-  overflow: hidden;
-}
-
-/* Make iframe fill the container */
-.video-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
-}
-
-/* Adjust spacing on phones */
-@media (max-width: 768px) {
-  .video-frame {
-    padding-left: 8px;   /* smaller padding */
-    padding-right: 8px;  /* smaller padding */
-    box-sizing: border-box;
-  }
-}
-</style>
-
-
-
-
-<!-- Modal -->
-<div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 relative">
-    <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
-    <img id="illustration-img" src="" alt="Illustration" class="w-full rounded-lg mb-4" />
-    <h2 id="illustration-title" class="text-xl font-bold mb-2"></h2>
-    <p id="illustration-desc" class="text-black-600"></p>
+<!-- Carousel of Other Animations -->
+<section class="max-w-6xl mx-auto px-4 mb-16">
+  <h2 class="text-2xl font-bold mb-4 text-center">More Animations</h2>
+  <div class="flex overflow-x-auto space-x-4 pb-4">
+    <a href="https://youtu.be/video1" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb1.jpg" alt="Animation 1" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 1</p>
+    </a>
+    <a href="https://youtu.be/video2" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb2.jpg" alt="Animation 2" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 2</p>
+    </a>
+    <a href="https://youtu.be/video3" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb3.jpg" alt="Animation 3" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 3</p>
+    </a>
+    <a href="https://youtu.be/video4" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb4.jpg" alt="Animation 4" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 4</p>
+    </a>
+    <a href="https://youtu.be/video5" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb5.jpg" alt="Animation 5" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 5</p>
+    </a>
+    <a href="https://youtu.be/video6" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb6.jpg" alt="Animation 6" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 6</p>
+    </a>
+    <a href="https://youtu.be/video7" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb7.jpg" alt="Animation 7" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 7</p>
+    </a>
+    <a href="https://youtu.be/video8" target="_blank" class="flex-shrink-0 w-56">
+      <img src="thumb8.jpg" alt="Animation 8" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
+      <p class="text-center mt-2 font-medium">Animation 8</p>
+    </a>
   </div>
-</div>
+</section>
 
 <!-- Footer -->
-<footer>
-  <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
-  <div>© 2025 Zahra FM</div>
+<footer class="mt-auto relative">
+  <img src="icon_asset/footer_zahra.png" alt="Footer Background" />
+  <div>© 2023 Zahra Fithriyah Muna</div>
 </footer>
 
-<!-- Scripts -->
-<script src="illustration.js"></script>
-<script src="navbar.js"></script>
 </body>
 </html>

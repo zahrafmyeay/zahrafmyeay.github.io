@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Self-hosted MateJournal font */
     @font-face {
       font-family: 'MateJournal';
       src: url('Mate Journal/Mate Journal.ttf') format('woff2'),
@@ -17,34 +16,21 @@
       font-weight: normal;
       font-style: normal;
     }
-
-    /* Headings and nav use MateJournal */
     nav, h1, h2, h3, h4, h5, h6 {
       font-family: 'matejournal', cursive;
     }
-
-    /* Paragraphs and list items use Montserrat */
     body, p, li {
       font-family: 'Montserrat', sans-serif;
     }
-
     .nav-icon { width: 130px; height: auto; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
     .nav-icon:hover { transform: scale(1.1); }
     .logo-img { height: 140px; width: auto; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-delay: 0.3s; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
     .video-frame { width: 100%; max-width: 900px; margin: 2rem auto; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; }
     .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
-
-    /* Gallery */
-    .gallery { position: relative; max-width: 1000px; margin: 2rem auto; }
+    .gallery { max-width: 1000px; margin: 2rem auto; display: flex; flex-direction: column; gap: 2rem; }
     .gallery img { width: 100%; height: auto; display: block; border-radius: 8px; }
-    .gallery button { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; font-size: 1.5rem; }
-    .gallery .prev { left: 10px; }
-    .gallery .next { right: 10px; }
-
-    /* Responsive spacing for sections */
     @media (max-width: 768px) {
       main { padding: 6rem 1rem 2rem 1rem; }
       .ar-section { flex-direction: column; text-align: center; }
@@ -136,11 +122,11 @@
       </div>
     </div>
 
-    <!-- Gallery -->
+    <!-- Vertical Gallery -->
     <div class="gallery fade-in">
-      <img id="gallery-img" src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Gallery Image">
-      <button class="prev" onclick="prevImage()">&lt;</button>
-      <button class="next" onclick="nextImage()">&gt;</button>
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Gallery Image 1">
+      <img src="wayfinding_unimelb_asset/image2.jpg" alt="Gallery Image 2">
+      <img src="wayfinding_unimelb_asset/image3.jpg" alt="Gallery Image 3">
     </div>
 
   </section>
@@ -151,21 +137,6 @@
   <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
   <div>© 2025 Zahra FM</div>
 </footer>
-
-<script>
-  // Gallery JS
-  const galleryImages = [
-    'wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg',
-    'wayfinding_unimelb_asset/image2.jpg',
-    'wayfinding_unimelb_asset/image3.jpg'
-  ];
-  let currentIndex = 0;
-  const galleryImg = document.getElementById('gallery-img');
-
-  function showImage(index) { galleryImg.src = galleryImages[index]; }
-  function prevImage() { currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length; showImage(currentIndex); }
-  function nextImage() { currentIndex = (currentIndex + 1) % galleryImages.length; showImage(currentIndex); }
-</script>
 
 </body>
 </html>
