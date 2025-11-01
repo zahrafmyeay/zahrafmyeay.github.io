@@ -34,11 +34,23 @@
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-delay: 0.3s; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    .gallery { position: relative; max-width: 800px; margin: 2rem auto; }
+    .video-frame { width: 100%; max-width: 900px; margin: 2rem auto; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; }
+    .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* Gallery */
+    .gallery { position: relative; max-width: 1000px; margin: 2rem auto; }
     .gallery img { width: 100%; height: auto; display: block; border-radius: 8px; }
     .gallery button { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; font-size: 1.5rem; }
     .gallery .prev { left: 10px; }
     .gallery .next { right: 10px; }
+
+    /* Responsive spacing for sections */
+    @media (max-width: 768px) {
+      main { padding: 6rem 1rem 2rem 1rem; }
+      .ar-section { flex-direction: column; text-align: center; }
+      .ar-section .ar-text, .ar-section .ar-img { width: 100%; margin-bottom: 1.5rem; }
+      .ar-section .ar-text ul { list-style-position: inside; padding-left: 0; }
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
@@ -94,23 +106,34 @@
   closeBtn.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
 </script>
 
-<!-- Main content -->
 <main class="pt-[220px] px-6">
 
   <!-- Wayfinding Section -->
-  <section class="w-full flex flex-col justify-center items-center">
-    <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Wayfinding Illustration" class="w-full h-auto object-cover rounded-lg shadow-lg">
+  <section class="w-full flex flex-col justify-center items-center space-y-12">
+    
+    <!-- Cover Image -->
+    <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Wayfinding Illustration" class="w-full md:w-3/4 h-auto object-cover rounded-lg shadow-lg">
 
-    <div class="mt-8 text-center max-w-3xl fade-in">
-      <h1 class="text-5xl mb-4">Wayfinding</h1>
-      <h2 class="text-2xl mb-4">Ancient Lives Exhibition</h2>
-      <p class="text-lg mb-4">This project involved designing a comprehensive wayfinding system for the museum exhibition, ensuring clear navigation and an accessible visitor experience.</p>
-      <ul class="list-disc list-inside text-left text-lg px-4">
-        <li>Designed signage and wayfinding system for the museum exhibition.</li>
-        <li>Focused on accessibility and clear visual hierarchy.</li>
-        <li>Created a cohesive visual identity consistent with exhibition branding.</li>
-        <li>Collaborated with curators to ensure information clarity.</li>
-      </ul>
+    <!-- Title & Description -->
+    <div class="text-center max-w-3xl fade-in space-y-4">
+      <h1 class="text-5xl mb-2">Wayfinding</h1>
+      <h2 class="text-2xl mb-2">Ancient Lives Exhibition</h2>
+      <p class="text-lg">This project involved designing a comprehensive wayfinding system for the museum exhibition, ensuring clear navigation and an accessible visitor experience.</p>
+    </div>
+
+    <!-- AR Section -->
+    <div class="ar-section flex justify-between items-center w-full max-w-5xl fade-in gap-6">
+      <div class="ar-text w-1/2 text-left">
+        <h3 class="text-3xl mb-4">Augmented Reality (AR)</h3>
+        <ul class="list-disc list-inside text-lg">
+          <li>Interactive AR wayfinding features.</li>
+          <li>Enhanced visitor engagement with virtual overlays.</li>
+          <li>Integrated seamlessly with exhibition signage.</li>
+        </ul>
+      </div>
+      <div class="ar-img w-1/2">
+        <iframe src="https://www.youtube.com/embed/cC_Ac8Urwzw?si=7OV2J0FsH14x9-PR" title="AR Demo Video" allowfullscreen class="w-full h-64 md:h-80 rounded-lg"></iframe>
+      </div>
     </div>
 
     <!-- Gallery -->
@@ -119,6 +142,7 @@
       <button class="prev" onclick="prevImage()">&lt;</button>
       <button class="next" onclick="nextImage()">&gt;</button>
     </div>
+
   </section>
 
 </main>

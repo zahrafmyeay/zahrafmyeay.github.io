@@ -122,6 +122,21 @@
     </button>
   </div>
   
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+
+  // Open mobile menu
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+  });
+
+  // Close mobile menu
+  closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+  });
+</script>
 
   <!-- Centered 2-column grid icons -->
   <div class="h-full w-full flex justify-center items-center">
