@@ -6,120 +6,59 @@
   <link rel="icon" type="image/png" href="icon_asset/zahra_fithriyah_muna_favicon.png"> 
   <title>Wayfinding - Zahra FM</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
-    nav {
-      font-family: 'matejournal';
-      background-image: url('icon_asset/beginning_section_zahra.png');
-      background-size: cover;
-      background-position: center;
+    /* Self-hosted MateJournal font */
+    @font-face {
+      font-family: 'MateJournal';
+      src: url('Mate Journal/Mate Journal.ttf') format('woff2'),
+           url('Mate Journal/Mate Journal.ttf') format('woff');
+      font-weight: normal;
+      font-style: normal;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    /* Headings and nav use MateJournal */
+    nav, h1, h2, h3, h4, h5, h6 {
       font-family: 'matejournal', cursive;
     }
 
-    .nav-icon {
-      width: 130px;
-      height: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      object-fit: contain;
+    /* Paragraphs and list items use Montserrat */
+    body, p, li {
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .nav-icon:hover {
-      transform: scale(1.1);
-    }
+    .nav-icon { width: 130px; height: auto; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
+    .nav-icon:hover { transform: scale(1.1); }
+    .logo-img { height: 140px; width: auto; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-delay: 0.3s; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    .logo-img {
-      height: 140px;
-      width: auto;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      flex: 1; /* Make main content take available space */
-    }
-
-    footer {
-      position: relative; /* Let it flow naturally */
-      color: white;
-      height: auto;
-    }
-
-    footer img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    footer > div {
-      position: absolute; /* Center text over footer image */
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      user-select: none;
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    /* Fade-in animation for text */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-      animation-delay: 0.3s;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    .gallery { position: relative; max-width: 800px; margin: 2rem auto; }
+    .gallery img { width: 100%; height: auto; display: block; border-radius: 8px; }
+    .gallery button { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; font-size: 1.5rem; }
+    .gallery .prev { left: 10px; }
+    .gallery .next { right: 10px; }
   </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
 
 <!-- Navbar -->
-<nav
-  class="shadow-md fixed w-full z-50"
-  style="
-    background-image: url('icon_asset/beginning_section_zahra.png');
-    background-size: cover;
-    background-position: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  "
->
+<nav class="fixed top-0 w-full z-50 shadow-md" style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center; padding-top: 30px; padding-bottom: 30px;">
   <div class="max-w-8xl mx-20 px-8 flex items-center justify-start md:justify-between">
-    <!-- Left icons (desktop only) -->
     <div class="hidden md:flex space-x-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
-
-    <!-- Logo -->
     <a href="index.html" class="flex-shrink-0 md:mx-auto">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
-
-    <!-- Right icons (desktop only) -->
     <div class="hidden md:flex space-x-8">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
-
-    <!-- Hamburger Button (mobile only) -->
     <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none z-50 ml-auto">
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
@@ -128,19 +67,13 @@
   </div>
 </nav>
 
-<!-- Mobile Fullscreen Overlay Menu -->
-<div id="mobile-menu" class="fixed inset-0 hidden z-50"
-     style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center;">
-  
-  <!-- Close button top-right -->
+<div id="mobile-menu" class="fixed inset-0 hidden z-50" style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center;">
   <div class="absolute top-5 right-5 z-50">
     <button id="close-btn" class="relative w-8 h-8">
       <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
       <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
     </button>
   </div>
-
-  <!-- Centered 2-column grid icons -->
   <div class="h-full w-full flex justify-center items-center">
     <div class="grid grid-cols-2 gap-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
@@ -157,56 +90,58 @@
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeBtn = document.getElementById('close-btn');
-
-  // Open mobile menu
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-  });
-
-  // Close mobile menu
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
+  menuBtn.addEventListener('click', () => { mobileMenu.classList.remove('hidden'); });
+  closeBtn.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
 </script>
 
-<!-- Main content wrapper: pushes content below navbar -->
-<main class="mt-[200px]">
+<!-- Main content -->
+<main class="pt-[220px] px-6">
 
   <!-- Wayfinding Section -->
-  <section class="relative w-full flex flex-col justify-center items-center">
-    <!-- Full-width image -->
-    <img 
-      src="illustrations_asset/Zahra_Fithriyah_children_book.jpg" 
-      alt="Wayfinding Illustration" 
-      class="w-full h-auto object-cover">
+  <section class="w-full flex flex-col justify-center items-center">
+    <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Wayfinding Illustration" class="w-full h-auto object-cover rounded-lg shadow-lg">
 
-    <!-- Text under the image with fade-in -->
-    <div class="mt-8 text-center max-w-3xl px-6 fade-in">
+    <div class="mt-8 text-center max-w-3xl fade-in">
       <h1 class="text-5xl mb-4">Wayfinding</h1>
-      <p class="text-lg mb-8">Ancient Lives Exhibition</p>
+      <h2 class="text-2xl mb-4">Ancient Lives Exhibition</h2>
+      <p class="text-lg mb-4">This project involved designing a comprehensive wayfinding system for the museum exhibition, ensuring clear navigation and an accessible visitor experience.</p>
+      <ul class="list-disc list-inside text-left text-lg px-4">
+        <li>Designed signage and wayfinding system for the museum exhibition.</li>
+        <li>Focused on accessibility and clear visual hierarchy.</li>
+        <li>Created a cohesive visual identity consistent with exhibition branding.</li>
+        <li>Collaborated with curators to ensure information clarity.</li>
+      </ul>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery fade-in">
+      <img id="gallery-img" src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Gallery Image">
+      <button class="prev" onclick="prevImage()">&lt;</button>
+      <button class="next" onclick="nextImage()">&gt;</button>
     </div>
   </section>
 
-  <!-- Modal -->
-  <div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 relative">
-      <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
-      <img id="illustration-img" src="" alt="Illustration" class="w-full rounded-lg mb-4" />
-      <h2 id="illustration-title" class="text-xl font-bold mb-2"></h2>
-      <p id="illustration-desc" class="text-black-600"></p>
-    </div>
-  </div>
-
 </main>
 
-<!-- Footer -->
 <footer>
   <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
   <div>© 2025 Zahra FM</div>
 </footer>
 
-<!-- Scripts -->
-<script src="illustration.js"></script>
-<script src="navbar.js"></script>
+<script>
+  // Gallery JS
+  const galleryImages = [
+    'wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg',
+    'wayfinding_unimelb_asset/image2.jpg',
+    'wayfinding_unimelb_asset/image3.jpg'
+  ];
+  let currentIndex = 0;
+  const galleryImg = document.getElementById('gallery-img');
+
+  function showImage(index) { galleryImg.src = galleryImages[index]; }
+  function prevImage() { currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length; showImage(currentIndex); }
+  function nextImage() { currentIndex = (currentIndex + 1) % galleryImages.length; showImage(currentIndex); }
+</script>
+
 </body>
 </html>
