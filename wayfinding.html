@@ -29,7 +29,7 @@
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     .video-frame { width: 100%; max-width: 900px; margin: 2rem auto; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; }
     .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
-    .gallery { max-width: 1000px; margin: 2rem auto; display: flex; flex-direction: column; gap: 2rem; }
+    .gallery { width: 100%; margin: 2rem auto; display: flex; flex-direction: column; gap: 2rem; padding: 0 2rem; }
     .gallery img { width: 100%; height: auto; display: block; border-radius: 8px; }
     @media (max-width: 768px) {
       main { padding: 6rem 1rem 2rem 1rem; }
@@ -43,8 +43,8 @@
 
 <!-- Navbar -->
 <nav class="fixed top-0 w-full z-50 shadow-md" style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center; padding-top: 30px; padding-bottom: 30px;">
-  <div class="max-w-8xl mx-20 px-8 flex items-center justify-start md:justify-between">
-    <div class="hidden md:flex space-x-8">
+  <div class="w-full px-6 md:px-12 flex items-center justify-start md:justify-between">
+    <div class="hidden md:flex space-x-6">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
@@ -52,7 +52,7 @@
     <a href="index.html" class="flex-shrink-0 md:mx-auto">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
-    <div class="hidden md:flex space-x-8">
+    <div class="hidden md:flex space-x-6">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
@@ -92,29 +92,30 @@
   closeBtn.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
 </script>
 
-<main class="pt-[220px] px-6">
+<main class="pt-[220px] px-6 md:px-12 lg:px-24 max-w-none">
 
   <!-- Wayfinding Section -->
   <section class="w-full flex flex-col justify-center items-center space-y-12">
     
     <!-- Cover Image -->
-    <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Wayfinding Illustration" class="w-full md:w-3/4 h-auto object-cover rounded-lg shadow-lg">
+    <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Wayfinding Illustration" class="w-full h-auto object-cover rounded-lg shadow-lg mb-5">
 
     <!-- Title & Description -->
-    <div class="text-center max-w-3xl fade-in space-y-4">
-      <h1 class="text-5xl mb-2">Wayfinding</h1>
+    <div class="text-center w-full fade-in space-y-4 px-6 md:px-12 lg:px-24 mt-36 mb-36">
+      <h1 class="text-4xl mb-2">Interactive Wayfinding</h1>
       <h2 class="text-2xl mb-2">Ancient Lives Exhibition</h2>
-      <p class="text-lg">This project involved designing a comprehensive wayfinding system for the museum exhibition, ensuring clear navigation and an accessible visitor experience.</p>
+      <p class="text-lg">Zahra created the wayfinding design with a concept that aims to navigate the best routes and communicate the character of the exhibition. It focuses on creating engaging and interactive signage that features a strong visual identity and provides clear information to guide visitors effectively, fostering a welcoming and festive atmosphere.<br><br>
+        The design was developed through extensive research, which included 5 hours of mapping trails to identify optimal locations for wayfinding and effective routes for guiding various types of visitors. Key insights were also gathered by conducting interviews with stakeholders to understand the challenges and experiences faced by visitors. Additionally, the design incorporates augmented reality (AR) elements that allow users to access navigation through 3D animated designs featuring a jug, pattern, and arrow. The design is inspired by the ancient goods displayed within the exhibition.</p>
     </div>
 
     <!-- AR Section -->
-    <div class="ar-section flex justify-between items-center w-full max-w-5xl fade-in gap-6">
+    <div class="ar-section flex justify-between items-center w-full fade-in gap-6 px-6 md:px-12 lg:px-24 mt-20 mb-16">
       <div class="ar-text w-1/2 text-left">
         <h3 class="text-3xl mb-4">Augmented Reality (AR)</h3>
         <ul class="list-disc list-inside text-lg">
           <li>Interactive AR wayfinding features.</li>
-          <li>Enhanced visitor engagement with virtual overlays.</li>
-          <li>Integrated seamlessly with exhibition signage.</li>
+          <li>The AR is beneficial for engaging the visitors and interesting way to interact.</li>
+          <li>Enhanced visitor engagement.</li>
         </ul>
       </div>
       <div class="ar-img w-1/2">
@@ -124,9 +125,24 @@
 
     <!-- Vertical Gallery -->
     <div class="gallery fade-in">
-      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_cover.jpg" alt="Gallery Image 1">
-      <img src="wayfinding_unimelb_asset/image2.jpg" alt="Gallery Image 2">
-      <img src="wayfinding_unimelb_asset/image3.jpg" alt="Gallery Image 3">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_ar_photo.jpg" alt="Gallery Image 1">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_guci.jpg" alt="Gallery Image 2">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_experimentaldesign.jpg" alt="Gallery Image 3">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_experimentaldesign_painting.jpg" alt="Gallery Image 4">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_objective.jpg" alt="Gallery Image 5">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_discover.jpg" alt="Gallery Image 6">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_visitormap.jpg" alt="Gallery Image 7">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_supergaphic.jpg" alt="Gallery Image 8">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_supergaphic2.jpg" alt="Gallery Image 9">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_measurement.jpg" alt="Gallery Image 10">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_measurement2.jpg" alt="Gallery Image 11">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup1.jpg" alt="Gallery Image 12">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup2.jpg" alt="Gallery Image 13">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup3.jpg" alt="Gallery Image 14">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup4.jpg" alt="Gallery Image 15">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup5.jpg" alt="Gallery Image 16">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup6.jpg" alt="Gallery Image 17">
+      <img src="wayfinding_unimelb_asset/zahra_fithriyah_muna_wayfinding_mockup7.jpg" alt="Gallery Image 18">
     </div>
 
   </section>
