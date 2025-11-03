@@ -12,6 +12,7 @@
       height: 100%;
       width: 100%;
       margin: 0;
+      overflow-x: hidden; /* prevent horizontal scroll from leaves */
     }
 
     body {
@@ -22,6 +23,7 @@
       color: #2d3748;
       min-height: 100vh;
       cursor: none;
+      position: relative;
     }
 
     section {
@@ -32,6 +34,8 @@
       align-items: center;
       text-align: center;
       width: 100%;
+      position: relative;
+      z-index: 2; /* ensure content is above leaves */
     }
 
     #logo {
@@ -39,6 +43,7 @@
       max-width: 100%;
     }
 
+    /* Logo Styles with Jump Animation */
     .logo {
       max-width: 100%;
       width: 40%;
@@ -47,6 +52,21 @@
       margin-bottom: 4rem;
       position: relative;
       z-index: 2;
+      animation: jumpIn 1s ease-out forwards;
+    }
+
+    @keyframes jumpIn {
+      0% {
+        transform: scale(0.2) translateZ(0);
+        opacity: 0;
+      }
+      60% {
+        transform: scale(1.2) translateZ(50px);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) translateZ(0);
+      }
     }
 
     .curve-container {
@@ -54,6 +74,7 @@
       width: 900px;
       height: 360px;
       margin: 0 auto;
+      z-index: 2;
     }
 
     .curve-container a {
@@ -83,7 +104,6 @@
       transform: scale(1.1) rotate(var(--rotate));
     }
 
-    /* Curved layout for laptop/desktop */
     .curve-container a:nth-child(1) { transform: rotate(-36deg); }
     .curve-container a:nth-child(2) { transform: rotate(-60deg); }
     .curve-container a:nth-child(3) { transform: rotate(-12deg); }
@@ -104,15 +124,13 @@
       color: #a0aec0;
       background: transparent;
       margin-top: auto;
+      position: relative;
+      z-index: 2;
     }
 
-    /* Tablet view (641px–1024px): 2x3 grid */
+    /* Tablet view (641px–1024px) */
     @media (max-width: 1024px) {
-      .logo {
-        width: 60%;
-        margin-bottom: 3rem;
-      }
-
+      .logo { width: 60%; margin-bottom: 3rem; }
       .curve-container {
         width: 90%;
         height: auto;
@@ -126,28 +144,13 @@
         position: static;
         transform: none;
       }
-
-      .curve-container a {
-        position: static;
-        transform: none !important;
-        width: 150px;
-        height: auto;
-      }
-
-      .curve-container a img {
-        transform: none !important;
-        width: 100%;
-        height: auto;
-      }
+      .curve-container a { position: static; transform: none !important; width: 150px; height: auto; }
+      .curve-container a img { transform: none !important; width: 100%; height: auto; }
     }
 
-    /* 📱 Mobile view (<640px): 2 icons per row — centered properly */
+    /* Mobile view (<640px) */
     @media (max-width: 640px) {
-      .logo {
-        width: 70%;
-        margin-bottom: 2rem;
-      }
-
+      .logo { width: 70%; margin-bottom: 2rem; }
       .curve-container {
         width: 100%;
         max-width: 360px;
@@ -161,45 +164,44 @@
         margin: 0 auto;
         position: static;
       }
-
-      .curve-container a {
-        position: static;
-        transform: none !important;
-        margin: 0 auto;
-        width: 120px;
-        height: auto;
-      }
-
-      .curve-container a img {
-        transform: none !important;
-        width: 100%;
-        height: auto;
-      }
+      .curve-container a { position: static; transform: none !important; margin: 0 auto; width: 120px; height: auto; }
+      .curve-container a img { transform: none !important; width: 100%; height: auto; }
     }
 
-    /* 🧁 Very small phones (<400px) */
     @media (max-width: 400px) {
-      .curve-container {
-        max-width: 300px;
-        gap: 1rem;
-      }
-
-      .curve-container a {
-        width: 100px;
-      }
-      
+      .curve-container { max-width: 300px; gap: 1rem; }
+      .curve-container a { width: 100px; }
     }
-     /* Custom Cursor Styles */
-     .custom-cursor {
+
+    /* Custom Cursor Styles */
+    .custom-cursor {
       position: fixed;
       top: 0;
       left: 0;
-      width: 60px; /* your icon width */
-      height: 50px; /* your icon height */
-      pointer-events: none; /* allow clicks through cursor */
+      width: 60px;
+      height: 50px;
+      pointer-events: none;
       transform: translate(-50%, -50%);
-      transition: transform 0.05s ease; /* smooth movement */
+      transition: transform 0.05s ease;
       z-index: 9999;
+    }
+
+    /* Flying Leaves CSS */
+    .leaf {
+      position: fixed;
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+      top: -50px;
+      z-index: 1;
+      animation-name: fall;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.7; }
     }
   </style>
 </head>
@@ -210,17 +212,12 @@
 
   <script>
     const cursor = document.getElementById('cursor');
-
     document.addEventListener('mousemove', e => {
-      // Update cursor position
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
   </script>
-  </style>
-</head>
 
-<body>
   <section>
     <div id="logo">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo" />
@@ -249,6 +246,34 @@
   </section>
 
   <footer>© 2025 Zahra FM</footer>
+
   <script src="navbar.js"></script>
+
+  <!-- Frequent Flying Leaves Script -->
+  <script>
+    const leafImages = [
+      'icon_asset/icon_mouse.png',
+      'icon_asset/icon_mouse.png',
+      'icon_asset/icon_mouse.png',
+      'icon_asset/icon_mouse.png',
+      'icon_asset/icon_mouse.png'
+    ];
+
+    function createLeaf() {
+      const leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+      const img = leafImages[Math.floor(Math.random() * leafImages.length)];
+      leaf.style.backgroundImage = `url(${img})`;
+      leaf.style.left = Math.random() * 100 + 'vw';
+      const size = 20 + Math.random() * 40;
+      leaf.style.width = size + 'px';
+      leaf.style.height = size + 'px';
+      leaf.style.animationDuration = 5 + Math.random() * 10 + 's';
+      document.body.appendChild(leaf);
+      leaf.addEventListener('animationend', () => { leaf.remove(); });
+    }
+
+    setInterval(createLeaf, 300); // a new leaf every 300ms
+  </script>
 </body>
 </html>
