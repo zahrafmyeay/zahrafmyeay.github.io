@@ -21,6 +21,7 @@
     }
     body, p, li {
       font-family: 'Montserrat', sans-serif;
+      cursor: none; /* Hide default cursor */
     }
     .nav-icon { width: 130px; height: auto; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
     .nav-icon:hover { transform: scale(1.1); }
@@ -37,10 +38,35 @@
       .ar-section .ar-text, .ar-section .ar-img { width: 100%; margin-bottom: 1.5rem; }
       .ar-section .ar-text ul { list-style-position: inside; padding-left: 0; }
     }
+
+    /* Custom Cursor Styles */
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60px; /* your icon width */
+      height: 50px; /* your icon height */
+      pointer-events: none; /* allow clicks through cursor */
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease; /* smooth movement */
+      z-index: 9999;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
+  <!-- Custom cursor -->
+  <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      // Update cursor position
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+  </script>
 <!-- Navbar -->
 <nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
