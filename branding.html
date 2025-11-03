@@ -21,7 +21,7 @@
     }
     body, p, li {
       font-family: 'Montserrat', sans-serif;
-      cursor: none; /* Hide default cursor */
+      cursor: none; 
     }
     .nav-icon { width: 130px; height: auto; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
     .nav-icon:hover { transform: scale(1.1); }
@@ -39,23 +39,23 @@
       .ar-section .ar-text ul { list-style-position: inside; padding-left: 0; }
     }
 
-    /* Custom Cursor Styles */
+  
     .custom-cursor {
       position: fixed;
       top: 0;
       left: 0;
-      width: 60px; /* your icon width */
-      height: 50px; /* your icon height */
-      pointer-events: none; /* allow clicks through cursor */
+      width: 60px; 
+      height: 50px; 
+      pointer-events: none; 
       transform: translate(-50%, -50%);
-      transition: transform 0.05s ease; /* smooth movement */
+      transition: transform 0.05s ease; 
       z-index: 9999;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Custom cursor -->
+
   <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
 
   <script>
@@ -66,31 +66,31 @@
     });
   </script>
 
-<!-- Navbar -->
+
 <nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
     
-    <!-- Desktop Left Icons -->
+  
     <div class="hidden md:flex space-x-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <!-- Logo always centered on desktop, left on mobile -->
+ 
     <a href="index.html" class="flex-shrink-0 md:mx-4">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <!-- Desktop Right Icons -->
+   
     <div class="hidden md:flex space-x-8">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
 
-    <!-- Hamburger Mobile -->
+   
     <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
@@ -99,7 +99,7 @@
   </div>
 </nav>
 
-<!-- Mobile Menu Overlay -->
+
 <div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="absolute top-5 right-5 z-50">
@@ -131,13 +131,13 @@
 
 <main class="pt-[220px] px-6 md:px-12 lg:px-24 max-w-none">
 
-  <!-- Wayfinding Section -->
+
   <section class="w-full flex flex-col justify-center items-center space-y-12">
     
-    <!-- Cover Image -->
+ 
     <img src="stickers_asset/Zahra_Fithriyah_coverbranding_stickers.jpg" alt="Wayfinding Illustration" class="w-full h-auto object-cover rounded-lg shadow-lg mb-5">
 
-    <!-- Title & Description -->
+   
     <div class="text-center w-full fade-in space-y-4 px-6 md:px-12 lg:px-24 mt-36 mb-36">
       <h1 class="text-4xl mb-2">AFL Stickers & T- Shirt</h1>
       <p class="text-lg">The project involves creating 10 typography and illustration-based stickers, including 2 animated depicted the Australian Football League (AFL), along with designing a custom t-shirt. The goal is to highlight the values and identity of AFL while engaging players and fans through unique stickers and t-shirts that reflect the league’s spirit.<br><br>
@@ -145,7 +145,7 @@
         Zahra created all the stickers and t-shirt designs based on the insight gathered from an online meeting with an AFL representative, ensuring the designs reflect the league’s essence. The stickers and t-shirt are designed to evoke feelings of positivity, celebration, community, and inclusivity.</p>
     </div>
 
-    <!-- AR Section -->
+  
     <div class="ar-section flex justify-between items-center w-full fade-in gap-6 px-6 md:px-12 lg:px-24 mt-20 mb-16">
       <div class="ar-text w-1/2 text-left">
         <h3 class="text-3xl mb-4">Animated Stickers</h3>
@@ -155,21 +155,29 @@
       <div class="stickers w-1/2 video-frame">
         <video class="w-full h-full rounded-lg" controls>
           <source src="stickers_asset/zahra_fithriyah_muna_stickers_animated.mp4" type="video/mp4">
-          Your browser does not support the video tag.
         </video>
       </div>
     </div>
 
-    <!-- Image Gallery -->
+
     <div class="gallery fade-in">
-      <img src="stickers_asset/Zahra_Fithriyah_branding_1.jpg" alt="Branding Image 1" />
-      <img src="stickers_asset/Zahra_Fithriyah_branding_2.jpg" alt="Branding Image 2" />
-      <img src="stickers_asset/Zahra_Fithriyah_branding_3.jpg" alt="Branding Image 3" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_overview_stickers.jpg" alt="Branding Image 1" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_basedonclient_stickers.jpg" alt="Branding Image 2" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_instagram_stickers.jpg" alt="Branding Image 3" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram.jpg" alt="Branding Image 4" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram2.jpg" alt="Branding Image 5" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram3.jpg" alt="Branding Image 6" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram4.jpg" alt="Branding Image 7" />
+      <img src="stickers_asset/Zahra_Fithriyah_project_tshirt.jpg" alt="Branding Image 3" />
     </div>
 
   </section>
+  
 
 </main>
+<footer class="mt-auto relative">
+  <img src="icon_asset/footer_zahra.png" alt="Footer Background" />
+</footer>
 
 </body>
 </html>

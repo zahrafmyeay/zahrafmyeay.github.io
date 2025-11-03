@@ -49,7 +49,7 @@
   padding: 0 4px;
 }
 
-/* Create two equal columns that sits next to each other */
+
 .column {
   flex: 30%;
   padding: 0 4px;
@@ -83,30 +83,30 @@
       font-size: 1.25rem;
       font-weight: 600;
     }
-     /* Custom Cursor Styles */
+
      .custom-cursor {
       position: fixed;
       top: 0;
       left: 0;
-      width: 60px; /* your icon width */
-      height: 50px; /* your icon height */
-      pointer-events: none; /* allow clicks through cursor */
+      width: 60px; 
+      height: 50px; 
+      pointer-events: none; 
       transform: translate(-50%, -50%);
-      transition: transform 0.05s ease; /* smooth movement */
+      transition: transform 0.05s ease; 
       z-index: 9999;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Custom cursor -->
+
   <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
 
   <script>
     const cursor = document.getElementById('cursor');
 
     document.addEventListener('mousemove', e => {
-      // Update cursor position
+
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
@@ -116,31 +116,31 @@
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-<!-- Navbar -->
+
 <nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
     
-    <!-- Desktop Left Icons -->
+
     <div class="hidden md:flex space-x-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <!-- Logo always centered on desktop, left on mobile -->
+
     <a href="index.html" class="flex-shrink-0 md:mx-4">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <!-- Desktop Right Icons -->
+  
     <div class="hidden md:flex space-x-8">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
 
-    <!-- Hamburger Mobile -->
+    
     <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
@@ -149,7 +149,7 @@
   </div>
 </nav>
 
-<!-- Mobile Menu Overlay -->
+
 <div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="absolute top-5 right-5 z-50">
@@ -179,7 +179,7 @@
   closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 </script>
 
-<!-- Illustration Section -->
+
 <section class="pt-72 pb-16 bg-white text-center"> 
   <h1 class="text-5xl mb-6">Illustrations</h1>
   <p class="text-lg mb-8">This is my illustration gallery.</p>
@@ -215,37 +215,37 @@
     </div>
   </div>
   <script>
-    // Get the elements with class="column"
+
     var elements = document.getElementsByClassName("column");
     
-    // Declare a loop variable
+
     var i;
     
-    // Full-width images
+
     function one() {
         for (i = 0; i < elements.length; i++) {
-        elements[i].style.msFlex = "100%";  // IE10
+        elements[i].style.msFlex = "100%";  
         elements[i].style.flex = "100%";
       }
     }
     
-    // Two images side by side
+ 
     function two() {
       for (i = 0; i < elements.length; i++) {
-        elements[i].style.msFlex = "50%";  // IE10
+        elements[i].style.msFlex = "50%";  
         elements[i].style.flex = "50%";
       }
     }
     
-    // Four images side by side
+    
     function four() {
       for (i = 0; i < elements.length; i++) {
-        elements[i].style.msFlex = "25%";  // IE10
+        elements[i].style.msFlex = "25%";  
         elements[i].style.flex = "25%";
       }
     }
     
-    // Add active class to the current button (highlight it)
+   
     var header = document.getElementById("myHeader");
     var btns = header.getElementsByClassName("btn");
     for (var i = 0; i < btns.length; i++) {
@@ -259,7 +259,7 @@
 
 </section>
 
-<!-- Modal -->
+
 <div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
   <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 relative">
     <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
@@ -269,13 +269,13 @@
   </div>
 </div>
 
-<!-- Footer -->
+
 <footer>
   <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
   <div>© 2025 Zahra FM</div>
 </footer>
 
-<!-- Scripts -->
+
 <script src="illustration.js"></script>
 <script src="navbar.js"></script>
 </body>

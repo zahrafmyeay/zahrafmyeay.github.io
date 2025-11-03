@@ -12,7 +12,7 @@
       height: 100%;
       width: 100%;
       margin: 0;
-      overflow-x: hidden; /* prevent horizontal scroll from leaves */
+      overflow-x: hidden; 
     }
 
     body {
@@ -35,7 +35,7 @@
       text-align: center;
       width: 100%;
       position: relative;
-      z-index: 2; /* ensure content is above leaves */
+      z-index: 2;
     }
 
     #logo {
@@ -43,7 +43,7 @@
       max-width: 100%;
     }
 
-    /* Logo Styles with Jump Animation */
+   
     .logo {
       max-width: 100%;
       width: 40%;
@@ -128,7 +128,7 @@
       z-index: 2;
     }
 
-    /* Tablet view (641px–1024px) */
+
     @media (max-width: 1024px) {
       .logo { width: 60%; margin-bottom: 3rem; }
       .curve-container {
@@ -148,7 +148,7 @@
       .curve-container a img { transform: none !important; width: 100%; height: auto; }
     }
 
-    /* Mobile view (<640px) */
+
     @media (max-width: 640px) {
       .logo { width: 70%; margin-bottom: 2rem; }
       .curve-container {
@@ -173,7 +173,7 @@
       .curve-container a { width: 100px; }
     }
 
-    /* Custom Cursor Styles */
+
     .custom-cursor {
       position: fixed;
       top: 0;
@@ -186,7 +186,7 @@
       z-index: 9999;
     }
 
-    /* Flying Leaves CSS */
+
     .leaf {
       position: fixed;
       background-size: contain;
@@ -207,7 +207,7 @@
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Custom cursor -->
+
   <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
 
   <script>
@@ -249,7 +249,7 @@
 
   <script src="navbar.js"></script>
 
-  <!-- Frequent Flying Leaves Script -->
+
   <script>
     const leafImages = [
       'icon_asset/icon_mouse.png',
@@ -273,7 +273,7 @@
       leaf.addEventListener('animationend', () => { leaf.remove(); });
     }
 
-    setInterval(createLeaf, 300); // a new leaf every 300ms
+    setInterval(createLeaf, 300); 
   </script>
 </body>
 </html>

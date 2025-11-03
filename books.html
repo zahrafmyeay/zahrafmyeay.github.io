@@ -37,30 +37,30 @@
       .ar-section .ar-text, .ar-section .ar-img { width: 100%; margin-bottom: 1.5rem; }
       .ar-section .ar-text ul { list-style-position: inside; padding-left: 0; }
     }
-     /* Custom Cursor Styles */
+
      .custom-cursor {
       position: fixed;
       top: 0;
       left: 0;
-      width: 60px; /* your icon width */
-      height: 50px; /* your icon height */
-      pointer-events: none; /* allow clicks through cursor */
+      width: 60px;
+      height: 50px;
+      pointer-events: none; 
       transform: translate(-50%, -50%);
-      transition: transform 0.05s ease; /* smooth movement */
+      transition: transform 0.05s ease; 
       z-index: 9999;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Custom cursor -->
+
   <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
 
   <script>
     const cursor = document.getElementById('cursor');
 
     document.addEventListener('mousemove', e => {
-      // Update cursor position
+
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
@@ -69,31 +69,31 @@
 </head>
 <body class="bg-white text-gray-800">
 
-<!-- Navbar -->
+
 <nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
     
-    <!-- Desktop Left Icons -->
+
     <div class="hidden md:flex space-x-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <!-- Logo always centered on desktop, left on mobile -->
+
     <a href="index.html" class="flex-shrink-0 md:mx-4">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <!-- Desktop Right Icons -->
+
     <div class="hidden md:flex space-x-8">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
 
-    <!-- Hamburger Mobile -->
+
     <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
@@ -102,7 +102,7 @@
   </div>
 </nav>
 
-<!-- Mobile Menu Overlay -->
+
 <div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="absolute top-5 right-5 z-50">
@@ -134,20 +134,20 @@
 
 <main class="pt-[220px] px-6 md:px-12 lg:px-24 max-w-none">
 
-  <!-- Wayfinding Section -->
+
   <section class="w-full flex flex-col justify-center items-center space-y-12">
     
-    <!-- Cover Image -->
+
     <img src="book_design_asset/zahra_fithriyah_cover_bookgraphic.jpg" alt="Wayfinding Illustration" class="w-full h-auto object-cover rounded-lg shadow-lg mb-5">
 
-    <!-- Title & Description -->
+  
     <div class="text-center w-full fade-in space-y-4 px-6 md:px-12 lg:px-24 mt-30 mb-30">
       <h1 class="text-4xl mb-4">Book Design and Illustration</h1>
       <h2 class="text-3xl mb-3">Graphic Design Preparation Steps</h2>
       <p class="text-lg">The book highlights the importance of preparation in each phase. It is suitable for all readers, encouraging them to apply their skills and think critically about the strategic process with optimism and creativity. The pocket book is portable, easy to carry, and suitable for designers’ way of life who like to find inspiration everywhere. Zahra designed the book and wrote the content by reading various articles to support it. <br><br>
         The target audience for this book is all readers worldwide, especially designers, design students, and design employees to study and as a guide in the preparation step in design graphics.</p>
     </div>
-    <!-- Vertical Gallery -->
+    
     <div class="gallery fade-in">
       <img src="book_design_asset/zahra_fithriyah_mockupcover.jpg" alt="Gallery Image 1">
       <img src="book_design_asset/zahra_fithriyah_thecontent.jpg" alt="Gallery Image 2">
@@ -162,7 +162,7 @@
 
 </main>
 
-<!-- Footer -->
+
 <footer class="relative text-center">
   <img src="icon_asset/footer_zahra.png" alt="Footer background curve" class="w-full" />
 </footer>

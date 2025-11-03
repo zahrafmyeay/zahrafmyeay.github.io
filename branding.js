@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const gallery = document.getElementById("branding-gallery");
   if (!gallery) {
-    console.error("❌ Branding gallery container not found");
+    console.error("Branding gallery container not found");
     return;
   }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     .catch(err => {
-      console.error("❌ Error loading branding.json:", err);
+      console.error("Error loading branding.json:", err);
       gallery.innerHTML = "<p class='col-span-full text-red-500'>Failed to load branding data.</p>";
     });
 });

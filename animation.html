@@ -13,7 +13,7 @@
     .nav-icon { width: 130px; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
     .nav-icon:hover { transform: scale(1.1); }
     .logo-img { height: 140px; width: auto; }
-    body { display: flex; flex-direction: column; min-height: 100vh; cursor: none; /* Hide default cursor */}
+    body { display: flex; flex-direction: column; min-height: 100vh; cursor: none;}
     section { flex-grow: 1; }
     footer { position: relative; color: white; height: auto; }
     footer img { display: block; width: 100%; height: auto; }
@@ -21,7 +21,6 @@
     .video-frame { width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; overflow: hidden; }
     .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
 
-    /* Carousel Styles */
     .carousel-wrapper { position: relative; max-width: 900px; margin: 0 auto; overflow: hidden; }
     .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
     .carousel-item { flex: 0 0 100%; display: flex; flex-direction: column; align-items: center; }
@@ -33,30 +32,30 @@
 
     @media (max-width: 1024px) { .carousel-item { flex: 0 0 50%; } }
     @media (max-width: 640px) { .carousel-item { flex: 0 0 100%; } }
-     /* Custom Cursor Styles */
+ 
      .custom-cursor {
       position: fixed;
       top: 0;
       left: 0;
-      width: 60px; /* your icon width */
-      height: 50px; /* your icon height */
-      pointer-events: none; /* allow clicks through cursor */
+      width: 60px; 
+      height: 50px; 
+      pointer-events: none; 
       transform: translate(-50%, -50%);
-      transition: transform 0.05s ease; /* smooth movement */
+      transition: transform 0.05s ease; 
       z-index: 9999;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
 
-  <!-- Custom cursor -->
+
   <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
 
   <script>
     const cursor = document.getElementById('cursor');
 
     document.addEventListener('mousemove', e => {
-      // Update cursor position
+     
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
@@ -65,31 +64,31 @@
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
-<!-- Navbar -->
+
 <nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
     
-    <!-- Desktop Left Icons -->
+   
     <div class="hidden md:flex space-x-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <!-- Logo always centered on desktop, left on mobile -->
+ 
     <a href="index.html" class="flex-shrink-0 md:mx-4">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <!-- Desktop Right Icons -->
+  
     <div class="hidden md:flex space-x-8">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
 
-    <!-- Hamburger Mobile -->
+  
     <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
@@ -98,7 +97,7 @@
   </div>
 </nav>
 
-<!-- Mobile Menu Overlay -->
+
 <div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
      style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="absolute top-5 right-5 z-50">
@@ -128,13 +127,13 @@
   closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 </script>
 
-<!-- Animations Section -->
+
 <section class="pt-72 pb-3 bg-white text-center">
   <h1 class="text-5xl mb-6">Animations</h1>
   <p class="text-lg mb-6">This is my showreel!</p>
 </section>
 
-<!-- Main Video -->
+
 <div class="video-frame mb-12">
   <iframe
     id="main-video"
@@ -144,7 +143,7 @@
   </iframe>
 </div>
 
-<!-- Carousel Section -->
+
 <section class="max-w-6xl mx-auto px-4 mb-16">
   <h2 class="text-2xl font-bold mb-4 text-center">More Animations</h2>
   <div class="carousel-wrapper">
@@ -206,7 +205,7 @@
   window.addEventListener('resize', updateCarousel);
 </script>
 
-<!-- Footer -->
+
 <footer class="mt-auto relative">
   <img src="icon_asset/footer_zahra.png" alt="Footer Background" />
   <div>© 2023 Zahra Fithriyah Muna</div>
