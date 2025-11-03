@@ -8,124 +8,61 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css" />
   <style>
-    nav {
-      font-family: 'matejournal';
-    }
+    nav { font-family: 'matejournal'; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'matejournal', cursive; }
+    .nav-icon { width: 130px; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
+    .nav-icon:hover { transform: scale(1.1); }
+    .logo-img { height: 140px; width: auto; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    section { flex-grow: 1; }
+    footer { position: relative; color: white; height: auto; }
+    footer img { display: block; width: 100%; height: auto; }
+    footer > div { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; user-select: none; font-size: 1.25rem; font-weight: 600; }
+    .video-frame { width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; overflow: hidden; }
+    .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'matejournal', cursive;
-    }
+    /* Carousel Styles */
+    .carousel-wrapper { position: relative; max-width: 900px; margin: 0 auto; overflow: hidden; }
+    .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+    .carousel-item { flex: 0 0 100%; display: flex; flex-direction: column; align-items: center; }
+    .carousel-item img { width: 100%; border-radius: 0.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+    .carousel-item img:hover { transform: scale(1.05); }
+    .carousel-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; font-size: 2rem; padding: 0.25rem 0.75rem; cursor: pointer; border-radius: 0.25rem; user-select: none; z-index: 10; }
+    .carousel-arrow.left { left: 10px; }
+    .carousel-arrow.right { right: 10px; }
 
-    .nav-icon {
-      width: 130px;
-      height: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      object-fit: contain;
-    }
-
-    .nav-icon:hover {
-      transform: scale(1.1);
-    }
-
-    .logo-img {
-      height: 140px;
-      width: auto;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    section {
-      flex-grow: 1;
-    }
-
-    footer {
-      position: relative;
-      color: white;
-      height: auto;
-    }
-
-    footer img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    footer > div {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      user-select: none;
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .video-frame {
-      width: 100%;
-      max-width: 900px;       /* Limit size on large screens */
-      margin: 0 auto;         /* Center horizontally */
-      aspect-ratio: 16 / 9;   /* Keep proper ratio */
-      overflow: hidden;
-    }
-
-    .video-frame iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-      .video-frame {
-        padding-left: 8px;
-        padding-right: 8px;
-        box-sizing: border-box;
-      }
-    }
+    @media (max-width: 1024px) { .carousel-item { flex: 0 0 50%; } }
+    @media (max-width: 640px) { .carousel-item { flex: 0 0 100%; } }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
 <!-- Navbar -->
-<nav
-  class="shadow-md fixed w-full z-50"
-  style="
-    background-image: url('icon_asset/beginning_section_zahra.png');
-    background-size: cover;
-    background-position: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  "
->
-  <div class="max-w-8xl mx-20 px-8 flex items-center justify-start md:justify-between">
-    <!-- Left icons (desktop only) -->
+<nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
+     style="background-image: url('icon_asset/beginning_section_zahra.png');">
+  <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
+    
+    <!-- Desktop Left Icons -->
     <div class="hidden md:flex space-x-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
       <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
       <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
 
-    <!-- Logo -->
-    <a href="index.html" class="flex-shrink-0 md:mx-auto">
+    <!-- Logo always centered on desktop, left on mobile -->
+    <a href="index.html" class="flex-shrink-0 md:mx-4">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
 
-    <!-- Right icons (desktop only) -->
+    <!-- Desktop Right Icons -->
     <div class="hidden md:flex space-x-8">
       <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
       <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
       <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
 
-    <!-- Hamburger Button (mobile only) -->
-    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none z-50 ml-auto">
+    <!-- Hamburger Mobile -->
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
       <span class="block w-6 h-0.5 bg-black"></span>
@@ -133,19 +70,15 @@
   </div>
 </nav>
 
-<!-- Mobile Fullscreen Overlay Menu -->
-<div id="mobile-menu" class="fixed inset-0 hidden z-50"
-     style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center;">
-  
-  <!-- Close button top-right -->
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
+     style="background-image: url('icon_asset/beginning_section_zahra.png');">
   <div class="absolute top-5 right-5 z-50">
     <button id="close-btn" class="relative w-8 h-8">
       <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
       <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
     </button>
   </div>
-  
-  <!-- Centered 2-column grid icons -->
   <div class="h-full w-full flex justify-center items-center">
     <div class="grid grid-cols-2 gap-8">
       <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
@@ -163,15 +96,8 @@
   const mobileMenu = document.getElementById('mobile-menu');
   const closeBtn = document.getElementById('close-btn');
 
-  // Open mobile menu
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-  });
-
-  // Close mobile menu
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
+  menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+  closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 </script>
 
 <!-- Animations Section -->
@@ -190,32 +116,67 @@
   </iframe>
 </div>
 
-<!-- Carousel of Other Animations -->
+<!-- Carousel Section -->
 <section class="max-w-6xl mx-auto px-4 mb-16">
   <h2 class="text-2xl font-bold mb-4 text-center">More Animations</h2>
-  <div class="flex overflow-x-auto space-x-4 pb-4">
-    <a href="https://youtu.be/video1" target="_blank" class="flex-shrink-0 w-56">
-      <img src="animation_asset/zahra_fithriyah_sekawan_berpijar.jpg" alt="Animation 1" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
-      <p class="text-center mt-2 font-medium">Animation 1</p>
-    </a>
-    <a href="https://youtu.be/video2" target="_blank" class="flex-shrink-0 w-56">
-      <img src="animation_asset/zahra_fithriyah_kumbang_animation.jpg" alt="Animation 2" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
-      <p class="text-center mt-2 font-medium">Animation 2</p>
-    </a>
-    <a href="https://youtu.be/video3" target="_blank" class="flex-shrink-0 w-56">
-      <img src="animation_asset/zahra_fithriyah_theblessingofmotherland.jpg" alt="Animation 3" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
-      <p class="text-center mt-2 font-medium">Animation 3</p>
-    </a>
-    <a href="https://youtu.be/video4" target="_blank" class="flex-shrink-0 w-56">
-      <img src="animation_asset/zahra_fithriyah_zahirah_salma_itukita.jpg" alt="Animation 4" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
-      <p class="text-center mt-2 font-medium">Animation 4</p>
-    </a>
-    <a href="https://youtu.be/video5" target="_blank" class="flex-shrink-0 w-56">
-      <img src="animation_asset/zahra_fithriyah_zahirah_salma_gotongroyong.jpg" alt="Animation 5" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" />
-      <p class="text-center mt-2 font-medium">Animation 5</p>
-    </a>
+  <div class="carousel-wrapper">
+    <div class="carousel-arrow left" id="prev">&#10094;</div>
+    <div class="carousel-arrow right" id="next">&#10095;</div>
+    <div class="carousel-track">
+      <div class="carousel-item">
+        <a href="https://www.youtube.com/embed/KZcMis4HTwE?si=Io_MoowbAcAoGIY2" target="_blank">
+          <img src="animation_asset/zahra_fithriyah_sekawan_berpijar.jpg" alt="Animation 1" />
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.youtube.com/embed/usF0oLG6q_w?si=xNPb4qaXq3h_5LnF" target="_blank">
+          <img src="animation_asset/zahra_fithriyah_kumbang_animation.jpg" alt="Animation 2" />
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.youtube.com/embed/T1LbAIp0Ezs?si=G1O4ZcaYCigrxjTQ" target="_blank">
+          <img src="animation_asset/zahra_fithriyah_theblessingofmotherland.jpg" alt="Animation 3" />
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.youtube.com/embed/pIlzgaV2J4E?si=ZMZVKTo4oTwtn7i-" target="_blank">
+          <img src="animation_asset/zahra_fithriyah_zahirah_salma_itukita.jpg" alt="Animation 4" />
+        </a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.youtube.com/embed/fpyioUe7B9I?si=wwDM5lEjiVkE2zJf" target="_blank">
+          <img src="animation_asset/zahra_fithriyah_zahirah_salma_gotongroyong.jpg" alt="Animation 5" />
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const nextButton = document.getElementById('next');
+  const prevButton = document.getElementById('prev');
+
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+  }
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateCarousel();
+  });
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', updateCarousel);
+</script>
 
 <!-- Footer -->
 <footer class="mt-auto relative">
