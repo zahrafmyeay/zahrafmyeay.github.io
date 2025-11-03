@@ -38,6 +38,7 @@
       flex-direction: column;
       min-height: 100vh;
       margin: 0;
+      cursor: none;
     }
 
     section {
@@ -99,6 +100,34 @@
     .social-email:hover img {
       filter: drop-shadow(0 0 8px #f4b400);
     }
+     /* Custom Cursor Styles */
+     .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 60px; /* your icon width */
+      height: 50px; /* your icon height */
+      pointer-events: none; /* allow clicks through cursor */
+      transform: translate(-50%, -50%);
+      transition: transform 0.05s ease; /* smooth movement */
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Custom cursor -->
+  <img src="icon_asset/icon_mouse.png" alt="Mouse Icon" class="custom-cursor" id="cursor">
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', e => {
+      // Update cursor position
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+  </script>
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
