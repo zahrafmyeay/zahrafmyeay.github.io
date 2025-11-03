@@ -4,138 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/png" href="icon_asset/zahra_fithriyah_muna_favicon.png"> 
-  <title>Branding - Zahra FM</title>
+  <title>Wayfinding - Zahra FM</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
-    nav {
-      font-family: 'matejournal';
+    @font-face {
+      font-family: 'MateJournal';
+      src: url('Mate Journal/Mate Journal.ttf') format('woff2'),
+           url('Mate Journal/Mate Journal.ttf') format('woff');
+      font-weight: normal;
+      font-style: normal;
     }
-
-    h1, h2, h3, h4, h5, h6 {
+    nav, h1, h2, h3, h4, h5, h6 {
       font-family: 'matejournal', cursive;
     }
-
-    .nav-icon {
-      width: 130px;
-      height: auto;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      object-fit: contain;
+    body, p, li {
+      font-family: 'Montserrat', sans-serif;
     }
-
-    .nav-icon:hover {
-      transform: scale(1.1);
-    }
-
-    .logo-img {
-      height: 140px;
-      width: auto;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    section {
-      flex-grow: 1;
-    }
-
-    footer {
-      position: relative;
-      color: white;
-      height: auto;
-    }
-
-    footer img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    footer > div {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-      user-select: none;
-      font-size: 1.25rem;
-      font-weight: 600;
+    .nav-icon { width: 130px; height: auto; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
+    .nav-icon:hover { transform: scale(1.1); }
+    .logo-img { height: 140px; width: auto; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-delay: 0.3s; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .video-frame { width: 100%; max-width: 900px; margin: 2rem auto; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; }
+    .video-frame iframe { width: 100%; height: 100%; border: none; display: block; }
+    .gallery { width: 100%; margin: 2rem auto; display: flex; flex-direction: column; gap: 2rem; padding: 0 2rem; }
+    .gallery img { width: 100%; height: auto; display: block; border-radius: 8px; }
+    @media (max-width: 768px) {
+      main { padding: 6rem 1rem 2rem 1rem; }
+      .ar-section { flex-direction: column; text-align: center; }
+      .ar-section .ar-text, .ar-section .ar-img { width: 100%; margin-bottom: 1.5rem; }
+      .ar-section .ar-text ul { list-style-position: inside; padding-left: 0; }
     }
   </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
 
 <!-- Navbar -->
-<nav
-  class="shadow-md fixed w-full z-50"
-  style="
-    background-image: url('icon_asset/beginning_section_zahra.png');
-    background-size: cover;
-    background-position: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  "
->
-  <div class="max-w-8xl mx-20 px-8 flex justify-between items-center">
-    <div class="flex space-x-8 ml-[-20px]">
-      <a href="animation.html" aria-label="Animation">
-        <img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" />
-      </a>
-      <a href="illustration.html" aria-label="Illustration">
-        <img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" />
-      </a>
-      <a href="wayfinding.html" aria-label="Wayfinding">
-        <img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" />
-      </a>
+<nav class="fixed top-0 w-full z-50 shadow-md" style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center; padding-top: 30px; padding-bottom: 30px;">
+  <div class="w-full px-6 md:px-12 flex items-center justify-start md:justify-between">
+    <div class="hidden md:flex space-x-6">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
     </div>
-
-    <a href="index.html" class="flex-shrink-0">
+    <a href="index.html" class="flex-shrink-0 md:mx-auto">
       <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
     </a>
-
-    <div class="flex space-x-8 mr-[-20px]">
-      <a href="books.html" aria-label="Books">
-        <img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" />
-      </a>
-      <a href="branding.html" aria-label="Branding">
-        <img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" />
-      </a>
-      <a href="aboutme.html" aria-label="About Me">
-        <img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" />
-      </a>
+    <div class="hidden md:flex space-x-6">
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
     </div>
+    <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none z-50 ml-auto">
+      <span class="block w-6 h-0.5 bg-black"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+      <span class="block w-6 h-0.5 bg-black"></span>
+    </button>
   </div>
 </nav>
 
-<!-- branding Section -->
-<section class="pt-72 pb-16 bg-white text-center">
-  <h1 class="text-5xl mb-6">Branding</h1>
-  <p class="text-lg mb-8">My Branding Works.</p>
-  
-</section>
-<!-- Modal -->
-<div id="illustration-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 relative">
-    <button id="illustration-close" class="absolute top-2 right-2 text-2xl">&times;</button>
-    <img id="illustration-img" src="" alt="Illustration" class="w-full rounded-lg mb-4" />
-    <h2 id="illustration-title" class="text-xl font-bold mb-2"></h2>
-    <p id="illustration-desc" class="text-black-600"></p>
+<div id="mobile-menu" class="fixed inset-0 hidden z-50" style="background-image: url('icon_asset/beginning_section_zahra.png'); background-size: cover; background-position: center;">
+  <div class="absolute top-5 right-5 z-50">
+    <button id="close-btn" class="relative w-8 h-8">
+      <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
+      <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
+    </button>
+  </div>
+  <div class="h-full w-full flex justify-center items-center">
+    <div class="grid grid-cols-2 gap-8">
+      <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+      <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+      <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
+      <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+      <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+      <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
+    </div>
   </div>
 </div>
 
-<!-- Footer -->
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('close-btn');
+  menuBtn.addEventListener('click', () => { mobileMenu.classList.remove('hidden'); });
+  closeBtn.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
+</script>
+
+<main class="pt-[220px] px-6 md:px-12 lg:px-24 max-w-none">
+
+  <!-- Wayfinding Section -->
+  <section class="w-full flex flex-col justify-center items-center space-y-12">
+    
+    <!-- Cover Image -->
+    <img src="stickers_asset/Zahra_Fithriyah_coverbranding_stickers.jpg" alt="Wayfinding Illustration" class="w-full h-auto object-cover rounded-lg shadow-lg mb-5">
+
+    <!-- Title & Description -->
+    <div class="text-center w-full fade-in space-y-4 px-6 md:px-12 lg:px-24 mt-36 mb-36">
+      <h1 class="text-4xl mb-2">AFL Stickers and T- Shirt</h1>
+      <p class="text-lg">The project involves creating 10 typography and illustration-based stickers, including 2 animated depicted the Australian Football League (AFL), along with designing a custom t-shirt. The goal is to highlight the values and identity of AFL while engaging players and fans through unique stickers and t-shirts that reflect the league’s spirit.<br><br>
+
+        Zahra created all the stickers and t-shirt designs based on the insight gathered from an online meeting with an AFL representative, ensuring the designs reflect the league’s essence. The stickers and t-shirt are designed to evoke feelings of positivity, celebration, community, happiness, and friendship. </p>
+    </div>
+
+    <!-- AR Section -->
+    <div class="ar-section flex justify-between items-center w-full fade-in gap-6 px-6 md:px-12 lg:px-24 mt-20 mb-16">
+      <div class="ar-text w-1/2 text-left">
+        <h3 class="text-3xl mb-4">Animated Stickers</h3>
+        <p class="text-lg">The animated stickers went through an intricate process: They were separated into layers and determined how the sticker moved to produce smooth movement. Then, they were animated with Adobe After Effects and edited with Adobe Premier Pro.<br><br>
+          The stickers use a green background to make removing and replacing the background easier for the client. </p>
+      </div>
+      <div class="ar-img w-1/2">
+        <iframe src="https://www.youtube.com/embed/cC_Ac8Urwzw?si=7OV2J0FsH14x9-PR" title="AR Demo Video" allowfullscreen class="w-full h-64 md:h-80 rounded-lg"></iframe>
+      </div>
+    </div>
+
+    <!-- Vertical Gallery -->
+    <div class="gallery fade-in">
+      <img src="stickers_asset/Zahra_Fithriyah_project_overview_stickers.jpg" alt="Gallery Image 1">
+      <img src="stickers_asset/Zahra_Fithriyah_project_basedonclient_stickers.jpg" alt="Gallery Image 2">
+      <img src="stickers_asset/Zahra_Fithriyah_project_instagram_stickers.jpg" alt="Gallery Image 3">
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram.jpg" alt="Gallery Image 4">
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram2.jpg" alt="Gallery Image 5">
+      <img src="stickers_asset/Zahra_Fithriyah_project_stickersforinstagram3.jpg" alt="Gallery Image 6">
+      <img src="stickers_asset/Zahra_Fithriyah_project_tshirt.jpg" alt="Gallery Image 7">
+    </div>
+
+  </section>
+
+</main>
+
 <footer>
   <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
   <div>© 2025 Zahra FM</div>
 </footer>
 
-<!-- Scripts -->
-<script src="illustration.js"></script>
-<script src="navbar.js"></script>
 </body>
 </html>
