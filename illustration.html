@@ -10,15 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
+    /* Custom font for the title only */
     @font-face {
-      font-family: 'Mate Journal';
-      src: url('fonts/Mate Journal.ttf') format('truetype'); 
+      font-family: 'mate_journal';
+      src: url('mate_journal/mate_journal.ttf') format('truetype'); 
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
     }
 
+    /* Apply mate_journal only to the h1 title */
+    h1.illustration-title {
+      font-family: 'mate_journal', cursive !important;
+    }
+
+    /* Other fonts for the page */
     nav { font-family: 'Mate Journal', cursive; }
-    h1.text-5xl { font-family: 'Mate Journal', cursive; }
     section p { font-family: 'Montserrat', sans-serif; } 
     h2,h3,h4,h5,h6 { font-family: 'Mate Journal', cursive; }
 
@@ -28,15 +35,14 @@
     body { display: flex; flex-direction: column; min-height: 100vh; cursor: none; }
     section { flex-grow: 1; }
 
-
     .gallery {
       column-count: 3; 
-      column-gap: 12px;      /* Gap between columns */
+      column-gap: 12px;
       padding: 12px;
     }
     .gallery img {
       width: 100%;
-      margin-bottom: 12px;   /* Gap at bottom of each image */
+      margin-bottom: 12px;
       border-radius: 4px;
       cursor: pointer;
       display: block;
@@ -77,25 +83,21 @@
 style="background-image: url('icon_asset/beginning_section_zahra.png');">
 <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
 
-
 <div class="hidden md:flex space-x-8">
  <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
  <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
  <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
 </div>
 
-
 <a href="index.html" class="flex-shrink-0 md:mx-4">
  <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
 </a>
-
 
 <div class="hidden md:flex space-x-8">
  <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
  <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
  <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
 </div>
-
 
 <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
  <span class="block w-6 h-0.5 bg-black"></span>
@@ -104,7 +106,6 @@ style="background-image: url('icon_asset/beginning_section_zahra.png');">
 </button>
 </div>
 </nav>
-
 
 <div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
 style="background-image: url('icon_asset/beginning_section_zahra.png');">
@@ -127,72 +128,69 @@ style="background-image: url('icon_asset/beginning_section_zahra.png');">
 </div>
 
 <script>
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeBtn = document.getElementById('close-btn');
 menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
 closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
 </script>
 
-  <section class="pt-72 pb-16 bg-white text-center"> 
-    <h1 class="text-5xl mb-6">Illustrations</h1>
-    <p class="text-lg mb-8">This is my illustration gallery.</p>
+<section class="pt-72 pb-16 bg-white text-center"> 
+  <h1 class="text-5xl mb-6 illustration-title">Illustrations</h1>
+  <p class="text-lg mb-8">This is my illustration gallery.</p>
 
-    <div class="gallery">
-      <img src="illustrations_asset/zahra_fithriyah_muna_traditional_market.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_traditionalmarble.jpg">
-      <img src="illustrations_asset/Zahra_Fithriyah_children_book.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_stall.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_football.jpg">
-      <img src="illustrations_asset/Zahra_Fithriyah_Nusantara.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_drawingsstyle.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_narrativedrawing.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_sekawan_berpijar.jpg">
-      <img src="illustrations_asset/ondel_zahra_fithriyah_muna.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_poster.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_pendrawing.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_loveyourparents.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_poster_meeting_illustration.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_culture.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_narrative.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_stopcyberbullying.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_library.jpg">
-      <img src="illustrations_asset/zahra_Fithriyah_Muna_Dreams.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_jakarta.jpg">
-      <img src="illustrations_asset/zahra_fithriyah_muna_learntosavemoney.jpg">
-    </div>
-  </section>
-
-  <!-- Modal -->
-  <div id="illustration-modal" class="flex">
-    <button id="illustration-close">&times;</button>
-    <img id="illustration-img" src="" alt="Illustration" />
+  <div class="gallery">
+    <img src="illustrations_asset/zahra_fithriyah_muna_traditional_market.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_traditionalmarble.jpg">
+    <img src="illustrations_asset/Zahra_Fithriyah_children_book.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_stall.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_football.jpg">
+    <img src="illustrations_asset/Zahra_Fithriyah_Nusantara.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_drawingsstyle.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_narrativedrawing.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_sekawan_berpijar.jpg">
+    <img src="illustrations_asset/ondel_zahra_fithriyah_muna.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_poster.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_pendrawing.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_loveyourparents.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_poster_meeting_illustration.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_culture.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_narrative.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_stopcyberbullying.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_library.jpg">
+    <img src="illustrations_asset/zahra_Fithriyah_Muna_Dreams.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_jakarta.jpg">
+    <img src="illustrations_asset/zahra_fithriyah_muna_learntosavemoney.jpg">
   </div>
+</section>
 
-  <footer>
-    <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
-    <div>© 2025 Zahra FM</div>
-  </footer>
+<!-- Modal -->
+<div id="illustration-modal" class="flex">
+  <button id="illustration-close">&times;</button>
+  <img id="illustration-img" src="" alt="Illustration" />
+</div>
 
-  <script>
-    const galleryImgs = document.querySelectorAll('.gallery img');
-    const modal = document.getElementById('illustration-modal');
-    const modalImg = document.getElementById('illustration-img');
-    const closeBtnModal = document.getElementById('illustration-close');
+<footer>
+  <img src="icon_asset/footer_zahra.png" alt="Footer background curve" />
+  <div>© 2025 Zahra FM</div>
+</footer>
 
-    galleryImgs.forEach(img => {
-      img.addEventListener('click', () => {
-        modal.style.display = 'flex';
-        modalImg.src = img.src;
-      });
-    });
+<script>
+const galleryImgs = document.querySelectorAll('.gallery img');
+const modal = document.getElementById('illustration-modal');
+const modalImg = document.getElementById('illustration-img');
+const closeBtnModal = document.getElementById('illustration-close');
 
-    closeBtnModal.addEventListener('click', () => { modal.style.display = 'none'; });
-    modal.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+galleryImgs.forEach(img => {
+  img.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalImg.src = img.src;
+  });
+});
 
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeBtn = document.getElementById('close-btn');
+closeBtnModal.addEventListener('click', () => { modal.style.display = 'none'; });
+modal.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+</script>
 
-    menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
-    closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-  </script>
 </body>
 </html>
