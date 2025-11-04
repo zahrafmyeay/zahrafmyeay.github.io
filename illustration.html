@@ -11,16 +11,16 @@
 
   <style>
     @font-face {
-      font-family: 'mate_journal';
-      src: url('fonts/mate_journal.ttf') format('truetype'); 
+      font-family: 'Mate Journal';
+      src: url('fonts/Mate Journal.ttf') format('truetype'); 
       font-weight: normal;
       font-style: normal;
     }
 
-    nav { font-family: 'mate_journal', cursive; }
-    h1.text-5xl { font-family: 'mate_journal', cursive; }
+    nav { font-family: 'Mate Journal', cursive; }
+    h1.text-5xl { font-family: 'Mate Journal', cursive; }
     section p { font-family: 'Montserrat', sans-serif; } 
-    h2,h3,h4,h5,h6 { font-family: 'mate_journal', cursive; }
+    h2,h3,h4,h5,h6 { font-family: 'Mate Journal', cursive; }
 
     .nav-icon { width: 130px; cursor: pointer; transition: transform 0.3s ease; object-fit: contain; }
     .nav-icon:hover { transform: scale(1.1); }
@@ -28,14 +28,15 @@
     body { display: flex; flex-direction: column; min-height: 100vh; cursor: none; }
     section { flex-grow: 1; }
 
+
     .gallery {
       column-count: 3; 
-      column-gap: 12px;
+      column-gap: 12px;      /* Gap between columns */
       padding: 12px;
     }
     .gallery img {
       width: 100%;
-      margin-bottom: 12px; 
+      margin-bottom: 12px;   /* Gap at bottom of each image */
       border-radius: 4px;
       cursor: pointer;
       display: block;
@@ -72,29 +73,63 @@
     document.addEventListener('mousemove', e => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; });
   </script>
 
-  <nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
-       style="background-image: url('icon_asset/beginning_section_zahra.png');">
-    <div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
-      <div class="hidden md:flex space-x-8">
-        <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
-        <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
-        <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
-      </div>
-      <a href="index.html" class="flex-shrink-0 md:mx-4">
-        <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
-      </a>
-      <div class="hidden md:flex space-x-8">
-        <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
-        <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
-        <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
-      </div>
-      <button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
-        <span class="block w-6 h-0.5 bg-black"></span>
-        <span class="block w-6 h-0.5 bg-black"></span>
-        <span class="block w-6 h-0.5 bg-black"></span>
-      </button>
-    </div>
-  </nav>
+<nav class="shadow-md fixed w-full z-50 bg-cover bg-center pt-8 pb-8"
+style="background-image: url('icon_asset/beginning_section_zahra.png');">
+<div class="max-w-8xl mx-5 md:mx-20 px-4 flex items-center justify-between">
+
+
+<div class="hidden md:flex space-x-8">
+ <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+ <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+ <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
+</div>
+
+
+<a href="index.html" class="flex-shrink-0 md:mx-4">
+ <img src="icon_asset/zahra_logo.png" alt="Zahra FM Logo" class="logo-img" />
+</a>
+
+
+<div class="hidden md:flex space-x-8">
+ <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+ <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+ <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
+</div>
+
+
+<button id="menu-btn" class="md:hidden flex flex-col space-y-1 focus:outline-none ml-auto">
+ <span class="block w-6 h-0.5 bg-black"></span>
+ <span class="block w-6 h-0.5 bg-black"></span>
+ <span class="block w-6 h-0.5 bg-black"></span>
+</button>
+</div>
+</nav>
+
+
+<div id="mobile-menu" class="fixed inset-0 hidden z-50 bg-cover bg-center"
+style="background-image: url('icon_asset/beginning_section_zahra.png');">
+<div class="absolute top-5 right-5 z-50">
+<button id="close-btn" class="relative w-8 h-8">
+ <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 rotate-45"></span>
+ <span class="block absolute top-1/2 left-1/2 w-8 h-0.5 bg-black transform -translate-x-1/2 -translate-y-1/2 -rotate-45"></span>
+</button>
+</div>
+<div class="h-full w-full flex justify-center items-center">
+<div class="grid grid-cols-2 gap-8">
+ <a href="animation.html"><img src="icon_asset/animations_zahra.png" alt="Animation" class="nav-icon" /></a>
+ <a href="illustration.html"><img src="icon_asset/illustrations_zahra.png" alt="Illustration" class="nav-icon" /></a>
+ <a href="wayfinding.html"><img src="icon_asset/wayfinding_zahra.png" alt="Wayfinding" class="nav-icon" /></a>
+ <a href="books.html"><img src="icon_asset/books_zahra.png" alt="Books" class="nav-icon" /></a>
+ <a href="branding.html"><img src="icon_asset/branding_zahra.png" alt="Branding" class="nav-icon" /></a>
+ <a href="aboutme.html"><img src="icon_asset/about_me_zahra.png" alt="About Me" class="nav-icon" /></a>
+</div>
+</div>
+</div>
+
+<script>
+menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+</script>
 
   <section class="pt-72 pb-16 bg-white text-center"> 
     <h1 class="text-5xl mb-6">Illustrations</h1>
@@ -125,6 +160,7 @@
     </div>
   </section>
 
+  <!-- Modal -->
   <div id="illustration-modal" class="flex">
     <button id="illustration-close">&times;</button>
     <img id="illustration-img" src="" alt="Illustration" />
