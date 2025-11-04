@@ -4,14 +4,14 @@ html {
 
 @font-face {
   font-family: 'matejournal';
-  src: url('Mate Journal/Mate Journal.otf') format('truetype');
+  src: url('mate_journal/mate_journal.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'matejournal';
-  src: url('Mate Journal/Mate Journal.otf') format('truetype');
+  src: url('mate_journal/mate_journal.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
